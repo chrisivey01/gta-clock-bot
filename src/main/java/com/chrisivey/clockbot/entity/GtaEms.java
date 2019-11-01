@@ -25,15 +25,22 @@ public class GtaEms {
     @Column(name = "weekly_hours")
     int weeklyHours;
 
+    int minutes;
+
+    @Column(name = "clocked_boolean")
+    int clockedBoolean;
+
     public GtaEms() {
     }
 
-    public GtaEms(String discordUid, Date clockIn, Date clockOut, int totalHours, int weeklyHours) {
+    public GtaEms(String discordUid, Date clockIn, Date clockOut, int totalHours, int weeklyHours, int minutes, int clockedBoolean) {
         this.discordUid = discordUid;
         this.clockIn = clockIn;
         this.clockOut = clockOut;
         this.totalHours = totalHours;
         this.weeklyHours = weeklyHours;
+        this.minutes = minutes;
+        this.clockedBoolean = clockedBoolean;
     }
 
     public String getDiscordUid() {
@@ -74,6 +81,22 @@ public class GtaEms {
 
     public void setWeeklyHours(int weeklyHours) {
         this.weeklyHours = weeklyHours;
+    }
+
+    public int getMinutes() {
+        return minutes;
+    }
+
+    public void setMinutes(int minutes) {
+        this.minutes = minutes;
+    }
+
+    public int getClockedBoolean() {
+        return clockedBoolean;
+    }
+
+    public void setClockedBoolean(int clockedBoolean) {
+        this.clockedBoolean = clockedBoolean;
     }
 }
 

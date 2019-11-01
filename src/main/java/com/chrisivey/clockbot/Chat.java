@@ -30,6 +30,8 @@ public class Chat extends ListenerAdapter {
         if (content.equals("!clockin") && message.getChannel().getId().equals("614868481757937664")) {
             time.alertClockIn("police", message);
         } else if (content.equals("!clockout") && message.getChannel().getId().equals("614868481757937664")) {
+            time.alertClockOut("police", message);
+
             message.getChannel().sendMessage("Yay Police clockout we did it!").complete();
         } else if (content.equals("!weekly") && message.getChannel().getId().equals("614868481757937664")) {
             message.getChannel().sendMessage("Yay Police weekly we did it!").complete();
@@ -52,6 +54,8 @@ public class Chat extends ListenerAdapter {
         if (content.equals("!clockin") && message.getChannel().getId().equals("635536282184843265")) {
             time.alertClockIn("EMS", message);
         } else if (content.equals("!clockout") && message.getChannel().getId().equals("635536282184843265")) {
+            time.alertClockOut("EMS", message);
+
             message.getChannel().sendMessage("Yay EMS clockout we did it!").complete();
         } else if (content.equals("!weekly") && message.getChannel().getId().equals("635536282184843265")) {
             message.getChannel().sendMessage("Yay EMS weekly we did it!").complete();
