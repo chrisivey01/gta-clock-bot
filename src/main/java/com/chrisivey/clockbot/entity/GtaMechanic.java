@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "gta_police")
-public class GtaPolice {
+@Table(name = "gta_mechanic")
+public class GtaMechanic {
 
     @Id
     @Column(name = "discord_uid")
@@ -30,10 +30,9 @@ public class GtaPolice {
     @Column(name = "clocked_boolean")
     int clockedBoolean;
 
-    public GtaPolice() {
-    }
+    public GtaMechanic(){}
 
-    public GtaPolice(String discordUid, Date clockIn, Date clockOut, int totalHours, int weeklyHours, int minutes, int clockedBoolean) {
+    public GtaMechanic(String discordUid, Date clockIn, Date clockOut, int totalHours, int weeklyHours, int minutes, int clockedBoolean) {
         this.discordUid = discordUid;
         this.clockIn = clockIn;
         this.clockOut = clockOut;
@@ -99,5 +98,3 @@ public class GtaPolice {
         this.clockedBoolean = clockedBoolean;
     }
 }
-
-
