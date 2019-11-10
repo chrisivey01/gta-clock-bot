@@ -2,6 +2,7 @@ package com.chrisivey.clockbot;
 
 import com.chrisivey.clockbot.controller.Time;
 import com.chrisivey.clockbot.repository.GtaEmsRepo;
+import com.chrisivey.clockbot.repository.GtaMechanicRepo;
 import com.chrisivey.clockbot.repository.GtaPoliceRepo;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
@@ -14,12 +15,14 @@ public class Chat extends ListenerAdapter {
     private Time time;
     private GtaEmsRepo gtaEmsRepo;
     private GtaPoliceRepo gtaPoliceRepo;
+    private GtaMechanicRepo gtaMechanicRepo;
 
     @Autowired
-    public Chat(GtaEmsRepo gtaEmsRepo, GtaPoliceRepo gtaPoliceRepo){
+    public Chat(GtaEmsRepo gtaEmsRepo, GtaPoliceRepo gtaPoliceRepo, GtaMechanicRepo gtaMechanicRepo){
         this.gtaEmsRepo = gtaEmsRepo;
         this.gtaPoliceRepo = gtaPoliceRepo;
-        time = new Time(gtaEmsRepo, gtaPoliceRepo);
+        this.gtaMechanicRepo = gtaMechanicRepo;
+        time = new Time(gtaEmsRepo, gtaPoliceRepo, gtaMechanicRepo);
     }
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
